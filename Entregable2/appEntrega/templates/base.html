@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestión de Pedidos{% endblock %}</title>
+</head>
+<body>
+    <!-- HEADER COMÚN -->
+    <header>
+        <h1>Mi Empresa - Gestión de Pedidos</h1>
+        <div id="enlacesHed">
+             <!-- Hacer asi los enlaces a las views de detalle -->
+            <a href="{ url 'principal' }">Inicio</a> |
+            <a href="{ url 'pedidos:listado' }">Pedidos</a> |
+            <a href="{ url 'productos:listado' }">Productos</a> |
+            <a href="{url 'componentes:listado' }">Componentes</a> 
+        </div>
+    </header>
+
+    <!-- Contenido a rellenar en cada pestaña -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER COMÚN -->
+    <hr>
+    <footer>
+        
+    </footer>
+</body>
+</html>
