@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle del Componente{% endblock %}
+
+{% block content %}
+<h2>Detalle del Componente</h2>
+<p><strong>Codigo de referencia:</strong> {{ componente.codigo_referencia }}</p>
+<p><strong>Nombre del modelo:</strong> {{ componente.nombre_modelo }}</p>
+<p><strong>Tipo de componente:</strong> {{ componente.tipo_componente }}</p>
+<p><strong>Proveedor:</strong> {{ componente.proveedor }}</p>
+<p><strong>Especificaciones:</strong> {{ componente.especificaciones_tecnicas }}</p>
+
+
+<a href="{% url 'componente_listado' %}">Volver al Listado</a>
+{% endblock %}

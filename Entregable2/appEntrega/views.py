@@ -16,7 +16,6 @@ def principal(request):
 
 #CLIENTE 
 
-
 # Vista de listado de clientes
 class ClienteListView(ListView):
     model = Cliente
@@ -41,3 +40,19 @@ class ClienteDeleteView(DeleteView):
     model = Cliente
     template_name = 'cliente_eliminar.html'
     success_url = reverse_lazy('cliente_listado')
+
+
+
+#COMPONENTES - De momento solo hay listado y detalle ya que no era un requisito, hacer mas tarde creacion y eliminacion??
+
+# Vista de listado de componentes
+class ComponenteListView(ListView):
+    model = Componente
+    template_name = 'componente_listado.html'
+    context_object_name = 'componentes'
+
+# Vista de detalle de cliente
+class ComponenteDetailView(DetailView):
+    model = Componente
+    template_name = 'componente_detalle.html'
+    context_object_name = 'componente'

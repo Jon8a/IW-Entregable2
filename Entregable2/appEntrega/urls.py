@@ -9,6 +9,11 @@ from .views import (
     ClienteCreateView,
     ClienteDeleteView,
 )
+#Componente
+from .views import(
+    ComponenteDetailView,
+    ComponenteListView
+)
 
 urlpatterns = [
 #Principal
@@ -19,5 +24,9 @@ path('clientes/', ClienteListView.as_view(), name='cliente_listado'),
 path('clientes/<int:pk>/', ClienteDetailView.as_view(), name='cliente_detalle'),
 path('clientes/nuevo/', ClienteCreateView.as_view(), name='cliente_crear'),
 path('clientes/<int:pk>/eliminar/', ClienteDeleteView.as_view(), name='cliente_eliminar'),
+
+#Componente
+path('componente/',ComponenteListView.as_view(), name='componente_listado'),
+path('componente/<int:pk>/', ComponenteDetailView.as_view(),name='componente_detalle'),
  
 ]
