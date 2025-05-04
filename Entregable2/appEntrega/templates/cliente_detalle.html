@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle del Cliente{% endblock %}
+
+{% block content %}
+<h2>Detalle del Cliente</h2>
+<p><strong>CIF:</strong> {{ cliente.cif }}</p>
+<p><strong>Nombre de Empresa:</strong> {{ cliente.nombre_empresa }}</p>
+<p><strong>Dirección:</strong> {{ cliente.direccion }}</p>
+<p><strong>Datos de Contacto:</strong> {{ cliente.datos_contacto }}</p>
+
+<!-- Añadir relaciones con pedidos que tengan -->
+
+
+<a href="{% url 'cliente_listado' %}">Volver al Listado</a>
+{% endblock %}
