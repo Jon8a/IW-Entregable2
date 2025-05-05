@@ -4,5 +4,40 @@
 
 {% block content %}
     <h2>Bienvenido a la aplicación de gestión de pedidos de Deustronic Components S.L</h2>
-    <p>Desde aquí podrás gestionar pedidos, productos y componentes.</p>
+    <p>Desde aquí podrás gestionar pedidos, productos, componentes y clientes de manera eficiente.</p>
+
+    <section style="margin-top: 20px;">
+        <h3>¿Qué puedes hacer en esta aplicación?</h3>
+        <ul>
+            <li><strong>Gestión de Clientes:</strong> Crea, visualiza y elimina clientes fácilmente.</li>
+            <li><strong>Gestión de Pedidos:</strong> Crea nuevos pedidos, actualiza su estado y consulta los detalles.</li>
+            <li><strong>Gestión de Productos:</strong> Administra el catálogo de productos, incluyendo sus componentes.</li>
+            <li><strong>Gestión de Componentes:</strong> Consulta los detalles de los componentes utilizados en los productos.</li>
+        </ul>
+    </section>
+
+    <section style="margin-top: 20px;">
+        <h3>Accesos rápidos</h3>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <a href="{% url 'cliente_listado' %}" class="button" >Gestión de Clientes</a>
+            <a href="{% url 'pedido_listado' %}" class="button" >Gestión de Pedidos</a>
+            <a href="{% url 'producto_listado' %}" class="button" >Gestión de Productos</a>
+            <a href="{% url 'componente_listado' %}" class="button" >Gestión de Componentes</a>
+        </div>
+    </section>
+
+    <section style="margin-top: 20px;">
+        <h3>Sobre Deustronic Components S.L</h3>
+        <p>
+            Deustronic Components S.L es una empresa líder en la fabricación de productos electrónicos. 
+            Nos especializamos en ofrecer soluciones personalizadas a empresas de todo el mundo, 
+            garantizando la calidad y la innovación en cada uno de nuestros productos.
+        </p>
+        <p>
+            Esta aplicación ha sido diseñada para optimizar la gestión de pedidos, productos y componentes, 
+            permitiendo a nuestro equipo trabajar de manera más eficiente y brindar un mejor servicio a nuestros clientes.
+        </p>
+    </section>
+
+    
 {% endblock %}
