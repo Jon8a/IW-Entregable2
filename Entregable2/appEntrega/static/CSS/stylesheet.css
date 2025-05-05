@@ -58,7 +58,7 @@ main {
 button, a.button {
     display: inline-block;
     background-color: #257fd960; 
-    color: #74ecb693;; 
+    color: #0080ff;
     padding: 10px 15px;
     text-decoration: none;
     border: none;
@@ -71,7 +71,7 @@ button, a.button {
 
 button:hover, a.button:hover {
     background-color:#74ecb693 ; 
-    color: #257fd960; 
+    color: #0080ffa2; 
 }
 
 /* Footer */
