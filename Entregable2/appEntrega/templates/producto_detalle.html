@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle del Producto{% endblock %}
+
+{% block content %}
+<h2>Detalle del Producto</h2>
+<p><strong>Referencia:</strong> {{ producto.referencia }}</p>
+<p><strong>Precio:</strong> {{ producto.precio }}</p>
+<p><strong>Descripcion:</strong> {{ producto.descripcion }}</p>
+<p><strong>Categoria:</strong> {{producto.categoria }}</p>
+<p><strong>Componentes:</strong></p>
+{% for componente in producto.componentes.all %}
+        <li>
+            <a href="{% url 'componente_detalle' componente.id %}">{{ componente.nombre_modelo }}</a>
+        </li>
+    <!-- En caso de qye este vacio -->
+    {% empty %}
+        <li>No hay componentes asociados a este producto.</li>
+    {% endfor %}
+
+
+
+<!-- Añadir relaciones con pedidos que tengan -->
+<br>
+
+<a href="{% url 'cliente_listado' %}">Volver al Listado</a>
+{% endblock %}
