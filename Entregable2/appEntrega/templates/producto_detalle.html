@@ -3,7 +3,7 @@
 {% block title %}Detalle del Producto{% endblock %}
 
 {% block content %}
-<h2>Detalle del Producto</h2>
+<h2>Detalle del Producto: {{producto.nombre}}</h2>
 <p><strong>Referencia:</strong> {{ producto.referencia }}</p>
 <p><strong>Precio:</strong> {{ producto.precio }}</p>
 <p><strong>Descripcion:</strong> {{ producto.descripcion }}</p>
@@ -20,8 +20,8 @@
 
 
 
-<!-- Añadir relaciones con pedidos que tengan -->
+
 <br>
 
-<a href="{% url 'cliente_listado' %}">Volver al Listado</a>
+<a href="{% url 'producto_listado' %}">Volver al Listado</a>
 {% endblock %}

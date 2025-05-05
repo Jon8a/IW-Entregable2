@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle del Pedido{% endblock %}
+
+{% block content %}
+<h2>Detalle del Pedido</h2>
+<p><strong>Codigo de referencia:</strong> {{ pedido.codigo_referencia }}</p>
+<p><strong>Fecha de entrega estimada:</strong> {{ pedido.fecha_entrega_estimada }}</p>
+<p><strong>Fecha de entrega:</strong> {{ pedido.fecha_entrega }}</p>
+<p><strong>Cliente:</strong> <a href="{% url 'cliente_detalle' pedido.cliente.id %}">{{ pedido.cliente.nombre_empresa }}</a></p>
+<p><strong>Productos:</strong></p>
+<ul>
+    {% for producto in pedido.productos.all %}
+        <li>
+            <a href="{% url 'producto_detalle' producto.id %}">{{ producto.nombre }}</a>
+        </li>
+    {% empty %}
+        <li>No hay productos asociados a este pedido.</li>
+    {% endfor %}
+</ul>
+<p><strong>Estado:</strong> {{ pedido.get_estado_display }}</p>
+<p><strong>Urgencia:</strong> {{ pedido.get_urgencia_display }}</p>
+<p><strong>Detalles:</strong> {{ pedido.detalles }}</p>
+
+
+<a href="{% url 'pedido_listado' %}">Volver al Listado</a>
+{% endblock %}
+

@@ -10,3 +10,9 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
         fields = ['referencia','precio' ,'nombre','descripcion' ,'categoria' , 'componentes' ]
+        
+class PedidoForm(forms.ModelForm):
+    class Meta:
+        model = Pedido
+        fields = ['codigo_referencia','fecha_entrega_estimada',
+                  'fecha_entrega','cliente','productos','estado','urgencia','detalles' ]

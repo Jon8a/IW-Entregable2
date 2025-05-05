@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Pedido{% endblock %}
+
+{% block content %}
+<h2>Estas editando el pedido:</h2>
+<p><strong>{{ object.nombre_referencia}}</strong></p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Actualizar</button>
+</form>
+<a href="{% url 'pedido_listado' %}">Cancelar</a>
+{% endblock %}

@@ -10,6 +10,16 @@
 <p><strong>Proveedor:</strong> {{ componente.proveedor }}</p>
 <p><strong>Especificaciones:</strong> {{ componente.especificaciones_tecnicas }}</p>
 
+<h3>Productos que contienen este componente:</h3>
+<ul>
+    {% for producto in componente.productos.all %}
+        <li>
+            <a href="{% url 'producto_detalle' producto.id %}">{{ producto.nombre }}</a>
+        </li>
+    {% empty %}
+        <li>No hay productos que contengan este componente.</li>
+    {% endfor %}
+</ul>
 
 <a href="{% url 'componente_listado' %}">Volver al Listado</a>
 {% endblock %}

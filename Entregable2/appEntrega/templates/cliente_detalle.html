@@ -9,7 +9,17 @@
 <p><strong>Dirección:</strong> {{ cliente.direccion }}</p>
 <p><strong>Datos de Contacto:</strong> {{ cliente.datos_contacto }}</p>
 
-<!-- Añadir relaciones con pedidos que tengan -->
+<h3>Pedidos realizados:</h3>
+<ul>
+    {% for pedido in cliente.pedidos.all %}
+        <li>
+            <a href="{% url 'pedido_detalle' pedido.id %}">{{ pedido.codigo_referencia }}</a> - {{ pedido.get_estado_display }}
+        </li>
+    {% empty %}
+        <li>No se ha realizado ningun pedido para este cliente.</li>
+    {% endfor %}
+</ul>
+
 
 
 <a href="{% url 'cliente_listado' %}">Volver al Listado</a>

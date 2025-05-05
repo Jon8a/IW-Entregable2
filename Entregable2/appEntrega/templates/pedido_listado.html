@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Pedidos{% endblock %}
+
+{% block content %}
+<h2>Listado de Pedidos</h2>
+<a href="{% url 'pedido_crear' %}">Crear Nuevo Pedido</a>
+<ul>
+    {% for pedido in pedidos %}
+        <li>
+            <a href="{% url 'pedido_detalle' pedido.id %}">{{ pedido.codigo_referencia }} {{pedido.get_estado_display}}</a>
+            <button type="button" ><a href="{% url 'pedido_editar' pedido.id %}">Editar</a></button>
+            <button type="button" ><a href="{% url 'pedido_eliminar' pedido.id %}">Eliminar</a></button>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

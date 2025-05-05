@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView,UpdateView
 from .models import Cliente, Componente, Producto, Pedido
-from .forms import ClienteForm,ProductoForm
+from .forms import ClienteForm,ProductoForm,PedidoForm
 
 
 
@@ -65,7 +65,34 @@ class ProductoDeleteView(DeleteView):
     template_name = 'producto_eliminar.html'
     success_url = reverse_lazy('producto_listado')
 
+#PEDIDOS
 
+class PedidoListView(ListView):
+    model = Pedido
+    template_name = 'pedido_listado.html'
+    context_object_name = 'pedidos'
+    
+class PedidoDetailView(DetailView):
+    model = Pedido
+    template_name = 'pedido_detalle.html'
+    context_object_name = 'pedido'
+    
+class PedidoCreateView(CreateView):
+    model = Pedido
+    form_class = PedidoForm
+    template_name = 'pedido_form.html'
+    success_url = reverse_lazy('pedido_listado')
+
+class PedidoDeleteView(DeleteView):
+    model = Pedido
+    template_name = 'pedido_eliminar.html'
+    success_url = reverse_lazy('pedido_listado')
+
+class PedidoUpdateView(UpdateView):
+    model = Pedido
+    form_class = PedidoForm
+    template_name = 'pedido_editar.html'
+    success_url = reverse_lazy('pedido_listado')
 
 #COMPONENTES - De momento solo hay listado y detalle ya que no era un requisito, hacer mas tarde creacion y eliminacion??
 
