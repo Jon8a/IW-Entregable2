@@ -16,8 +16,6 @@ header {
     text-align: center;
 }
 
-
-
 header h1 {
     margin: 0;
     font-size: 24px;
@@ -44,7 +42,7 @@ header h1 {
     text-decoration: none;
 }
 
-/* Main Content */
+/* Main */
 main {
     padding: 20px;
     max-width: 800px;
@@ -54,11 +52,13 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Buttons */
+/* Botones, hacer con flex para que tengan mismo tamaño y esten alineados */
 button, a.button {
-    display: inline-block;
-    background-color: #257fd960; 
-    color: #0080ff;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #004080;
+    color: white;
     padding: 10px 15px;
     text-decoration: none;
     border: none;
@@ -67,13 +67,14 @@ button, a.button {
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    height: 40px; 
+    box-sizing: border-box; 
 }
 
 button:hover, a.button:hover {
-    background-color:#74ecb693 ; 
-    color: #0080ffa2; 
+    background-color: #0066cc;
+    color: white;
 }
-
 /* Footer */
 footer {
     text-align: center;
@@ -94,20 +95,12 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Lists */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+/* Listas */
+
 
 ul li {
     margin: 10px 0;
-}
-
-ul li a {
-    color: #004080;
-    text-decoration: none;
-    font-weight: bold;
+    
 }
 
 ul li a:hover {
@@ -131,8 +124,53 @@ form button {
     width: auto;
 }
 
-/* Headings */
+/* Encabezados */
 h2 {
     color: #004080;
     margin-bottom: 20px;
 }
+
+/*LISTADOS*
+
+/*Estilo para tablas*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    background-color: #004080;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+/*DETALLES*/
+
+/* Enlaces a detalles */
+a.detalle_link {
+    color: #004080;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a.detalle_link:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+

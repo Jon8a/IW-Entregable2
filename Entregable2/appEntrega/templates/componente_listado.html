@@ -4,11 +4,31 @@
 
 {% block content %}
 <h2>Listado de Componentes</h2>
-<ul>
-    {% for componente in componentes %}
-        <li>
-            <a href="{% url 'componente_detalle' componente.id %}">{{ componente.nombre_modelo }}</a>
-        </li>
-    {% endfor %}
-</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del Modelo</th>
+            <th>Código de Referencia</th>
+            <th>Proveedor</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        {% for componente in componentes %}
+        <tr>
+            <td><a href="{% url 'componente_detalle' componente.id %}" class = 'detalle_link'>{{ componente.nombre_modelo }}</a></td>
+            <td>{{ componente.codigo_referencia }}</td>
+            <td>{{ componente.proveedor }}</td>
+            
+             
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay componentes registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

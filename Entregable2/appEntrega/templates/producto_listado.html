@@ -4,13 +4,31 @@
 
 {% block content %}
 <h2>Listado de Productos</h2>
-<a href="{% url 'producto_crear' %}">Crear Nuevo Producto</a>
-<ul>
-    {% for producto in productos %}
-        <li>
-            <a href="{% url 'producto_detalle' producto.id %}">{{ producto.nombre }}</a>
-            <button type="button" ><a href="{% url 'producto_eliminar' producto.id %}">Eliminar</a></button>
-        </li>
-    {% endfor %}
-</ul>
+<a href="{% url 'producto_crear' %}" class="button">Crear Nuevo Producto</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Referencia</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td><a href="{% url 'producto_detalle' producto.id %}" class="detalle_link">{{ producto.nombre }}</a></td>
+            <td>{{ producto.referencia }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>
+                <a href="{% url 'producto_eliminar' producto.id %}" class="button">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay productos registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

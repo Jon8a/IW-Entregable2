@@ -11,7 +11,7 @@
 <p><strong>Componentes:</strong></p>
 {% for componente in producto.componentes.all %}
         <li>
-            <a href="{% url 'componente_detalle' componente.id %}">{{ componente.nombre_modelo }}</a>
+            <a href="{% url 'componente_detalle' componente.id %}" class = 'detalle_link'>{{ componente.nombre_modelo }}</a>
         </li>
     <!-- En caso de qye este vacio -->
     {% empty %}
@@ -23,5 +23,6 @@
 
 <br>
 
-<a href="{% url 'producto_listado' %}">Volver al Listado</a>
+<a href="javascript:history.back()" class="button">Volver a la Página Anterior</a>
+<a href="{% url 'pedido_listado' %}" class="button">Volver al Listado</a>
 {% endblock %}

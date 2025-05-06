@@ -14,12 +14,13 @@
 <ul>
     {% for producto in componente.productos.all %}
         <li>
-            <a href="{% url 'producto_detalle' producto.id %}">{{ producto.nombre }}</a>
+            <a href="{% url 'producto_detalle' producto.id %}" class = 'detalle_link'>{{ producto.nombre }}</a>
         </li>
     {% empty %}
         <li>No hay productos que contengan este componente.</li>
     {% endfor %}
 </ul>
-
-<a href="{% url 'componente_listado' %}">Volver al Listado</a>
+<br>
+<a href="javascript:history.back()" class="button">Volver a la Página Anterior</a>
+<a href="{% url 'pedido_listado' %}" class="button">Volver al Listado</a>
 {% endblock %}

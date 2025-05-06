@@ -14,14 +14,13 @@
 <ul>
     {% for pedido in cliente.pedidos.all %}
         <li>
-            <a href="{% url 'pedido_detalle' pedido.id %}">{{ pedido.codigo_referencia }}</a> - {{ pedido.get_estado_display }}
+            <a href="{% url 'pedido_detalle' pedido.id %}" class = 'detalle_link'>{{ pedido.codigo_referencia }}</a> - {{ pedido.get_estado_display }}
         </li>
     {% empty %}
         <li>No se ha realizado ningun pedido para este cliente.</li>
     {% endfor %}
 </ul>
 
-
-
-<a href="{% url 'cliente_listado' %}">Volver al Listado</a>
+<a href="javascript:history.back()" class="button">Volver a la Página Anterior</a>
+<a href="{% url 'pedido_listado' %}" class="button">Volver al Listado</a>
 {% endblock %}

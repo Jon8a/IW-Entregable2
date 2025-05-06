@@ -4,13 +4,29 @@
 
 {% block content %}
 <h2>Listado de Clientes</h2>
-<a href="{% url 'cliente_crear' %}">Crear Nuevo Cliente</a>
-<ul>
-    {% for cliente in clientes %}
-        <li>
-            <a href="{% url 'cliente_detalle' cliente.id %}">{{ cliente.nombre_empresa }}</a>
-            <button type="button" ><a href="{% url 'cliente_eliminar' cliente.id %}">Eliminar</a></button>
-        </li>
-    {% endfor %}
-</ul>
+<a href="{% url 'cliente_crear' %}" class="button">Crear Nuevo Cliente</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre de Empresa</th>
+            <th>CIF</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+        <tr>
+            <td><a href="{% url 'cliente_detalle' cliente.id %}" class="detalle_link">{{ cliente.nombre_empresa }}</a></td>
+            <td>{{ cliente.cif }}</td>
+            <td>
+                <a href="{% url 'cliente_eliminar' cliente.id %}" class="button">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No hay clientes registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

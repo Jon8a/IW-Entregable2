@@ -4,10 +4,11 @@
 
 {% block content %}
 <h2>¿Estás seguro de que deseas eliminar este pedido?</h2>
-<p><strong>{{ object.nombre_referencia}}</strong></p>
+<p><strong>{{ object.codigo_referencia}}</strong></p>
 <form method="post">
     {% csrf_token %}
     <button type="submit">Eliminar</button>
+    <a href="{% url 'pedido_listado' %}" class="button">Cancelar</a>
 </form>
-<a href="{% url 'pedido_listado' %}">Cancelar</a>
+
 {% endblock %}
