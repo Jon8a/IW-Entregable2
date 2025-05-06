@@ -7,8 +7,7 @@
 <p><strong>{{ object.nombre }}</strong></p>
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Eliminar</button>
-    <a href="{% url 'producto_listado' %}" class ='button'>Cancelar</a>
+    <button type="submit" class="btn-eliminar">Eliminar</button>
+    <a href="{% url 'producto_listado' %}" class="button">Cancelar</a>
 </form>
-
 {% endblock %}
