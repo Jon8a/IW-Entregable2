@@ -74,3 +74,11 @@ Ejecutar el servidor local:
 
 Y finalmente acceder a la aplicacion mediante el navegador en esta url:
     http://127.0.0.1:8000/
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Siguiente entrega:
+
+Tal vez añadir una barra de busqueda y poder ordenar las listas??
+Un modo oscuro?
+Al crear productos o componentes nuevos poder añadir archivos como fotos o modelos 3D?
