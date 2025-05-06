@@ -22,7 +22,9 @@
             <td><a href="{% url 'cliente_detalle' pedido.cliente.id %}" class ='detalle_link'>{{ pedido.cliente.nombre_empresa }}</a></td>
             <td>
                 <a href="{% url 'pedido_editar' pedido.id %}" class="button">Editar</a>
-                <a href="{% url 'pedido_eliminar' pedido.id %}" class="button">Eliminar</a>
+                
+                    <a href="{% url 'pedido_eliminar' pedido.id %}" class="btn-eliminar">Eliminar</a>
+                </td>
             </td>
         </tr>
         {% empty %}

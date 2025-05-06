@@ -174,3 +174,44 @@ a.detalle_link:hover {
     text-decoration: underline;
 }
 
+/* Botón de Crear Nuevo Cliente */
+.btn-crear-cliente {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a746c7; /* Verde llamativo */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-crear-cliente:hover {
+    background-color: #16e635d6; /* Verde más oscuro */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* Botón de Eliminar */
+.btn-eliminar {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #dc3545; /* Rojo llamativo */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333; /* Rojo más oscuro */
+}

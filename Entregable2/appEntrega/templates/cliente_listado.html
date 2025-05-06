@@ -4,7 +4,9 @@
 
 {% block content %}
 <h2>Listado de Clientes</h2>
-<a href="{% url 'cliente_crear' %}" class="button">Crear Nuevo Cliente</a>
+<!-- Botón de Crear Nuevo Cliente -->
+<a href="{% url 'cliente_crear' %}" class="btn-crear-cliente">Crear Nuevo Cliente</a>
+
 <table>
     <thead>
         <tr>
@@ -19,7 +21,8 @@
             <td><a href="{% url 'cliente_detalle' cliente.id %}" class="detalle_link">{{ cliente.nombre_empresa }}</a></td>
             <td>{{ cliente.cif }}</td>
             <td>
-                <a href="{% url 'cliente_eliminar' cliente.id %}" class="button">Eliminar</a>
+                <!-- Botón de Eliminar -->
+                <a href="{% url 'cliente_eliminar' cliente.id %}" class="btn-eliminar">Eliminar</a>
             </td>
         </tr>
         {% empty %}
