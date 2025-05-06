@@ -6,19 +6,26 @@
     <meta charset="UTF-8">
     <title>{% block title %}Gestión de Pedidos{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'CSS/stylesheet.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
 
 </head>
 <body>
     <!-- HEADER COMÚN -->
-    <header>
-        <h1> Deustronic Components S.L - Gestión de Pedidos</h1>
-        <div id="enlacesHed">
-             <!-- Hacer asi los enlaces a las views de detalle -->
-            <a href="{% url 'home' %}">Inicio</a> |
-            <a href="{% url 'cliente_listado' %}">Clientes</a> | 
-            <a href="{% url 'pedido_listado' %}">Pedidos</a> |
-            <a href="{% url 'producto_listado' %}">Productos</a> |
-            <a href="{%url 'componente_listado' %}">Componentes</a> 
+    <header class="header">
+        <div class="logo-container">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Logo de Deustronic Components" class="logo">
+            </a>
+        </div>
+        <div class="header-content">
+            <h1>Deustronic Components S.L - Gestión de Pedidos</h1>
+            <div id="enlacesHed">
+                <a href="{% url 'home' %}">Inicio</a> |
+                <a href="{% url 'cliente_listado' %}">Clientes</a> |
+                <a href="{% url 'pedido_listado' %}">Pedidos</a> |
+                <a href="{% url 'producto_listado' %}">Productos</a> |
+                <a href="{% url 'componente_listado' %}">Componentes</a>
+            </div>
         </div>
     </header>
 
@@ -31,8 +38,8 @@
     <!-- FOOTER COMÚN -->
     <hr>
     <footer>
-    <p>&copy; 2025 . Todos los derechos reservados.</p>
-    <p>Contacto: <a href= "deustroniccomponents@gmail.com">deustroniccomponents@gmail.com</a></p>
+    <p>&copy; 2025 . Todos los derechos reservados.         Contacto: <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">deustroniccomponents@gmail.com</a></p> 
+
 
     </footer>
 </body>

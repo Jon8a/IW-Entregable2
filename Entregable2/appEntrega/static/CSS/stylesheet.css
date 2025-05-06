@@ -9,23 +9,40 @@ body {
 }
 
 /* Header */
-header {
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #004080;
     color: white;
     padding: 20px 10px;
-    text-align: center;
+    position: relative;
+
+
+
 }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
+.logo-container {
+    position: absolute;
+    left: 280px; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo {
+    height: 225px; 
+    width: auto;
+}
+
+.header-content {
+    text-align: center;
+    margin-left: 100px; 
 }
 
 #enlacesHed {
     margin-top: 10px;
 }
 
-/* Enlaces en el header */
 #enlacesHed a {
     color: white;
     text-decoration: none;
@@ -37,11 +54,10 @@ header h1 {
 }
 
 #enlacesHed a:hover {
-    background-color: #ffffff; 
-    color: #004080; 
+    background-color: #ffffff;
+    color: #004080;
     text-decoration: none;
 }
-
 /* Main */
 main {
     padding: 20px;
