@@ -7,7 +7,7 @@
 <p><strong>{{ object.nombre_empresa }}</strong></p>
 <form method="post">
     {% csrf_token %}
-    <button type="submit" class = 'button'>Eliminar</button>
+    <button type="submit" class = 'btn-eliminar'>Eliminar</button>
     <a href="{% url 'cliente_listado' %}" class="button">Cancelar</a>
 </form>
 

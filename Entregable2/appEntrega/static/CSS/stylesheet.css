@@ -18,25 +18,24 @@ body {
     padding: 20px 10px;
     position: relative;
 
-
-
 }
 
 .logo-container {
-    position: absolute;
-    left: 280px; 
-    top: 50%;
-    transform: translateY(-50%);
+    position: absolute; 
+    left:10%; 
+    top: 50%; 
+    transform: translateY(-50%); 
 }
 
 .logo {
-    height: 225px; 
+    height: auto;
+    max-height: 300px; 
     width: auto;
+    max-width: 200px; 
 }
 
 .header-content {
-    text-align: center;
-    margin-left: 100px; 
+    text-align: center; 
 }
 
 #enlacesHed {
@@ -192,20 +191,66 @@ a.detalle_link:hover {
 
 /* Botón de Eliminar */
 .btn-eliminar {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #dc3545; /* Rojo llamativo */
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #dc3545; 
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
     border: none;
     border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
+    height: 40px; 
+    box-sizing: border-box; 
 }
 
 .btn-eliminar:hover {
-    background-color: #c82333; /* Rojo más oscuro */
+    background-color: #c82333; 
 }
+
+/*Responsive para pantallas pequeñas*/
+@media (max-width: 1080px) {
+    .logo-container {
+        display: none; 
+    }
+
+    body {
+        font-size: 14px; /* Reduce el tamaño de la fuente general */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem; /* Ajusta los encabezados */
+    }
+
+     a,p {
+        font-size: 20px; /* Reduce el tamaño de los enlaces */
+    }
+
+    button, a.button {
+        font-size: 16px; /* Aumenta el tamaño de la fuente en los botones */
+        padding: 12px 20px; /* Aumenta el padding para hacerlos más grandes */
+        height: auto; /* Permite que el botón se ajuste automáticamente */
+    }
+
+    .btn-eliminar {
+        font-size: px; /* Aumenta el tamaño de la fuente del botón de eliminar */
+        padding: 30px 40px; /* Aumenta el padding */
+    }
+    table {
+        width: 100%; /* Asegura que la tabla ocupe todo el ancho */
+        font-size: 14px; /* Reduce el tamaño de la fuente */
+    }
+
+    table th, table td {
+        padding: 25px; /* Ajusta el padding para que sea más cómodo */
+    }
+
+    table tr {
+        display: table-row; /* Asegura que las filas se comporten correctamente */
+    }
+}
+
