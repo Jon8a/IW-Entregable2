@@ -1,19 +1,192 @@
-/* GENERAL */
+/* Estilo general para el cuerpo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
 }
+
+/* Sección Hero (encabezado principal) */
+.hero {
+    text-align: center;
+    background-color: #004080;
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.hero h2 span {
+    color: #ffcc00;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.btn-hero {
+    background-color: #ffcc00;
+    color: #004080;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.btn-hero:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Sección de características */
+.features {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.features h3 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item h4 {
+    color: #004080;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Sección de enlaces rápidos */
+.quick-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.quick-links h3 {
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.quick-links-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.quick-links-grid a {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quick-links-grid a:hover {
+    background-color: #0066cc;
+    transform: scale(1.05);
+}
+
+/* Sección "Sobre nosotros" */
+.about {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about h3 {
+    color: #004080;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.about p {
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-hero {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-links-grid {
+        flex-direction: column;
+    }
+}
+
 /* Encabezados */
 h2 {
     color: #004080;
     margin-bottom: 20px;
 }
 
-/* HEADER */
+/* Encabezado principal */
 .header {
     display: flex;
     align-items: center;
@@ -22,29 +195,24 @@ h2 {
     color: white;
     padding: 20px 10px;
     position: relative;
-
 }
 
 .logo-container {
-    position: absolute; 
-    left:10%; 
-    top: 50%; 
-    transform: translateY(-50%); 
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .logo {
     height: auto;
-    max-height: 300px; 
+    max-height: 300px;
     width: auto;
-    max-width: 200px; 
+    max-width: 200px;
 }
 
 .header-content {
-    text-align: center; 
-}
-
-#enlacesHed {
-    margin-top: 10px;
+    text-align: center;
 }
 
 #enlacesHed a {
@@ -60,9 +228,9 @@ h2 {
 #enlacesHed a:hover {
     background-color: #ffffff;
     color: #004080;
-    text-decoration: none;
 }
-/* Main */
+
+/* Contenido principal */
 main {
     padding: 20px;
     max-width: 800px;
@@ -72,11 +240,11 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Botones, hacer con flex para que tengan mismo tamaño y esten alineados */
+/* Botones */
 button, a.button {
-    display: inline-flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #004080;
     color: white;
     padding: 10px 15px;
@@ -87,15 +255,14 @@ button, a.button {
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
-    height: 40px; 
-    box-sizing: border-box; 
+    height: 40px;
 }
 
 button:hover, a.button:hover {
     background-color: #0066cc;
-    color: white;
 }
-/* Footer */
+
+/* Pie de página */
 footer {
     text-align: center;
     padding: 10px;
@@ -115,13 +282,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
-
-/* Forms */
-form {
-    margin-top: 20px;
-}
-
+/* Formularios */
 form input, form select, form textarea {
     width: 100%;
     padding: 10px;
@@ -130,15 +291,7 @@ form input, form select, form textarea {
     border-radius: 5px;
 }
 
-form button {
-    width: auto;
-}
-
-
-
-/*LISTADOS*
-
-/*Estilo para tablas*/
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -165,12 +318,12 @@ table tr:hover {
     background-color: #ddd;
 }
 
-/* Botón de Eliminar */
+/* Botón de eliminar */
 .btn-eliminar {
-    display: inline-flex; 
-    align-items: center; 
-    justify-content: center; 
-    background-color: #dc3545; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dc3545;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
@@ -180,15 +333,12 @@ table tr:hover {
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    height: 40px; 
-    box-sizing: border-box; 
+    height: 40px;
 }
 
 .btn-eliminar:hover {
-    background-color: #c82333; 
+    background-color: #c82333;
 }
-
-/*DETALLES*/
 
 /* Enlaces a detalles */
 a.detalle_link {
@@ -202,60 +352,3 @@ a.detalle_link:hover {
     color: #0066cc;
     text-decoration: underline;
 }
-
-/* Listas */
-
-
-ul li {
-    margin: 10px 0;
-    
-}
-
-ul li a:hover {
-    text-decoration: underline;
-}
-
-
-
-/*Responsive para pantallas pequeñas*/
-@media (max-width: 1080px) {
-    .logo-container {
-        display: none; 
-    }
-
-    body {
-        font-size: 14px; 
-    }
-
-    h1, h2, h3 {
-        font-size: 1.5rem; 
-    }
-
-     a,p {
-        font-size: 20px; 
-    }
-
-    button, a.button {
-        font-size: 16px; 
-        padding: 12px 20px; 
-        height: auto; 
-    }
-
-    .btn-eliminar {
-        font-size: px; 
-        padding: 30px 40px; 
-    }
-    table {
-        width: 100%; 
-        font-size: 14px; 
-    }
-
-    table th, table td {
-        padding: 25px; 
-    }
-
-    table tr {
-        display: table-row; 
-    }
-}
-
