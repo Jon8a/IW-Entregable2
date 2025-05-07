@@ -13,7 +13,7 @@ body {
     text-align: center;
     background-color: #004080;
     color: white;
-    padding: 30px 20px;
+    padding: 15px 10px;
     border-radius: 12px;
     margin: 20px auto;
     max-width: 800px;
@@ -156,29 +156,6 @@ body {
     text-align: justify;
 }
 
-/* Diseño responsivo para pantallas pequeñas */
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .btn-hero {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-links-grid {
-        flex-direction: column;
-    }
-}
 
 /* Encabezados */
 h2 {
@@ -242,20 +219,25 @@ main {
 
 /* Botones */
 button, a.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
     background-color: #004080;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 15px; 
     text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
+    text-align: center;
     transition: background-color 0.3s, color 0.3s;
-    height: 40px;
+    height: 40px; 
+    box-sizing: border-box; 
+
+   
+   
 }
 
 button:hover, a.button:hover {
@@ -325,15 +307,18 @@ table tr:hover {
     justify-content: center;
     background-color: #dc3545;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 15px; 
     text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
-    height: 40px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 40px; 
+    box-sizing: border-box; 
+
 }
 
 .btn-eliminar:hover {
@@ -351,4 +336,69 @@ a.detalle_link {
 a.detalle_link:hover {
     color: #0066cc;
     text-decoration: underline;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (width < 1093px) {
+    .hero h2 {
+        font-size: 2rem;
+        
+        
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-hero {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-links-grid {
+        flex-direction: column;
+    }
+
+    .logo-container {
+        display: none; 
+    }
+
+    body {
+        font-size: 14px; 
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem; 
+    }
+
+     a,p {
+        font-size: 20px; 
+    }
+
+    button, a.button {
+        font-size: 16px; 
+        padding: 12px 20px; 
+        height: auto; 
+    }
+
+    .btn-eliminar {
+        font-size: px; 
+        padding: 30px 40px; 
+    }
+    table {
+        width: 100%; 
+        font-size: 14px; 
+    }
+
+    table th, table td {
+        padding: 25px; 
+    }
+
+    table tr {
+        display: table-row; 
+    }
 }
