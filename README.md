@@ -3,7 +3,7 @@
 Enlace al repositorio de GitHub:
     https://github.com/Jon8a/IW-Entregable2
 
-
+Resultado de pip freeze en el archivo: requirements.txt
 ---------------------------------------------------------------------------------------------------------------
 
 Este proyecto ha sido desarrollado en el contexto del Reto 2 de la asignatura, usando Django como framework backend. Permite gestionar pedidos, productos y componentes para una empresa, incluyendo información de clientes y el estado de los pedidos.
@@ -82,3 +82,6 @@ Siguiente entrega:
 Tal vez añadir una barra de busqueda y poder ordenar las listas??
 Un modo oscuro?
 Al crear productos o componentes nuevos poder añadir archivos como fotos o modelos 3D?
+Actualmente al crear un nuevo pedido o producto al añadir los productos y componentes hay que hacerlo con control click para seleccionar mas de uno, buscar una forma mas intuitiva y visual de hacerlo
+Si es necesario añadir todas las acciones a los demas modelos tambien editar eliminar...
+Hacer categoria como un nuevo modelo en vez de atributo para poder navegar por las relaciones tambien o sino poder añadirlo como filtro en busqueda?

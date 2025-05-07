@@ -1,4 +1,4 @@
-/* General */
+/* GENERAL */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -7,8 +7,13 @@ body {
     background-color: #f4f4f9;
     color: #333;
 }
+/* Encabezados */
+h2 {
+    color: #004080;
+    margin-bottom: 20px;
+}
 
-/* Header */
+/* HEADER */
 .header {
     display: flex;
     align-items: center;
@@ -110,17 +115,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Listas */
 
-
-ul li {
-    margin: 10px 0;
-    
-}
-
-ul li a:hover {
-    text-decoration: underline;
-}
 
 /* Forms */
 form {
@@ -139,11 +134,7 @@ form button {
     width: auto;
 }
 
-/* Encabezados */
-h2 {
-    color: #004080;
-    margin-bottom: 20px;
-}
+
 
 /*LISTADOS*
 
@@ -174,21 +165,6 @@ table tr:hover {
     background-color: #ddd;
 }
 
-/*DETALLES*/
-
-/* Enlaces a detalles */
-a.detalle_link {
-    color: #004080;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-a.detalle_link:hover {
-    color: #0066cc;
-    text-decoration: underline;
-}
-
 /* Botón de Eliminar */
 .btn-eliminar {
     display: inline-flex; 
@@ -212,6 +188,35 @@ a.detalle_link:hover {
     background-color: #c82333; 
 }
 
+/*DETALLES*/
+
+/* Enlaces a detalles */
+a.detalle_link {
+    color: #004080;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a.detalle_link:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Listas */
+
+
+ul li {
+    margin: 10px 0;
+    
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
 /*Responsive para pantallas pequeñas*/
 @media (max-width: 1080px) {
     .logo-container {
@@ -219,38 +224,38 @@ a.detalle_link:hover {
     }
 
     body {
-        font-size: 14px; /* Reduce el tamaño de la fuente general */
+        font-size: 14px; 
     }
 
     h1, h2, h3 {
-        font-size: 1.5rem; /* Ajusta los encabezados */
+        font-size: 1.5rem; 
     }
 
      a,p {
-        font-size: 20px; /* Reduce el tamaño de los enlaces */
+        font-size: 20px; 
     }
 
     button, a.button {
-        font-size: 16px; /* Aumenta el tamaño de la fuente en los botones */
-        padding: 12px 20px; /* Aumenta el padding para hacerlos más grandes */
-        height: auto; /* Permite que el botón se ajuste automáticamente */
+        font-size: 16px; 
+        padding: 12px 20px; 
+        height: auto; 
     }
 
     .btn-eliminar {
-        font-size: px; /* Aumenta el tamaño de la fuente del botón de eliminar */
-        padding: 30px 40px; /* Aumenta el padding */
+        font-size: px; 
+        padding: 30px 40px; 
     }
     table {
-        width: 100%; /* Asegura que la tabla ocupe todo el ancho */
-        font-size: 14px; /* Reduce el tamaño de la fuente */
+        width: 100%; 
+        font-size: 14px; 
     }
 
     table th, table td {
-        padding: 25px; /* Ajusta el padding para que sea más cómodo */
+        padding: 25px; 
     }
 
     table tr {
-        display: table-row; /* Asegura que las filas se comporten correctamente */
+        display: table-row; 
     }
 }
 
