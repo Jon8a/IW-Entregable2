@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Producto{% endblock %}
+
+{% block content %}
+<h2>Estas editando el producto:</h2>
+<p><strong>{{ object.nombre}}</strong></p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Actualizar</button>
+    <a href="{% url 'producto_listado' %}" class="button">Cancelar</a>
+</form>
+
+{% endblock %}

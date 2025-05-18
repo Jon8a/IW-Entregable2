@@ -1,5 +1,5 @@
 from django import forms
-from .models import Cliente,Producto,Pedido
+from .models import Cliente,Producto,Pedido,Componente
 
 class ClienteForm(forms.ModelForm):
     class Meta:
@@ -16,3 +16,8 @@ class PedidoForm(forms.ModelForm):
         model = Pedido
         fields = ['codigo_referencia','fecha_entrega_estimada',
                   'fecha_entrega','cliente','productos','estado','urgencia','detalles' ]
+
+class ComponenteForm(forms.ModelForm):
+    class Meta:
+        model = Componente
+        fields = ['codigo_referencia','nombre_modelo','tipo_componente','proveedor','especificaciones_tecnicas']

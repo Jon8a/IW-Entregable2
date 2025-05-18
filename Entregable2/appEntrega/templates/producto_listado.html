@@ -21,6 +21,7 @@
             <td>{{ producto.referencia }}</td>
             <td>{{ producto.precio }}</td>
             <td>
+                <a href="{% url 'producto_editar' producto.id %}" class="button">Editar</a>
                 <!-- Botón de Eliminar con la clase btn-eliminar -->
                 <a href="{% url 'producto_eliminar' producto.id %}" class="btn-eliminar">Eliminar</a>
             </td>

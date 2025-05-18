@@ -3,7 +3,13 @@
 {% block title %}Detalle del Pedido{% endblock %}
 
 {% block content %}
-<h2>Detalle del Pedido</h2>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <h2>Detalle del Pedido</h2>
+    <div>
+        <a href="{% url 'pedido_editar' pedido.id %}" class="button">Editar</a>
+        <a href="{% url 'pedido_eliminar' pedido.id %}" class="btn-eliminar">Eliminar</a>
+    </div>
+</div>
 <p><strong>Codigo de referencia:</strong> {{ pedido.codigo_referencia }}</p>
 <p><strong>Fecha de entrega estimada:</strong> {{ pedido.fecha_entrega_estimada }}</p>
 <p><strong>Fecha de entrega:</strong> {{ pedido.fecha_entrega }}</p>

@@ -21,6 +21,7 @@
             <td><a href="{% url 'cliente_detalle' cliente.id %}" class="detalle_link">{{ cliente.nombre_empresa }}</a></td>
             <td>{{ cliente.cif }}</td>
             <td>
+                <a href="{% url 'cliente_editar' cliente.id %}" class="button">Editar</a>
                 <!-- Botón de Eliminar -->
                 <a href="{% url 'cliente_eliminar' cliente.id %}" class="btn-eliminar">Eliminar</a>
             </td>
