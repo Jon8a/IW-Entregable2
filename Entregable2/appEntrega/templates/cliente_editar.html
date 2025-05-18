@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Cliente{% endblock %}
+
+{% block content %}
+<h2>Estas editando el cliente:</h2>
+<p><strong>{{ object.nombre_empresa}}</strong></p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Actualizar</button>
+    <a href="{% url 'cliente_listado' %}" class="button">Cancelar</a>
+</form>
+
+{% endblock %}

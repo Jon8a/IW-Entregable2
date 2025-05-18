@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView,UpdateView
 from .models import Cliente, Componente, Producto, Pedido
-from .forms import ClienteForm,ProductoForm,PedidoForm
+from .forms import ClienteForm,ProductoForm,PedidoForm,ComponenteForm
 
 
 
@@ -40,6 +40,12 @@ class ClienteDeleteView(DeleteView):
     model = Cliente
     template_name = 'cliente_eliminar.html'
     success_url = reverse_lazy('cliente_listado')
+    
+class ClienteUpdateView(UpdateView):
+    model = Cliente
+    form_class = ClienteForm
+    template_name = 'cliente_editar.html'
+    success_url = reverse_lazy('cliente_listado')
 
 
 #PRODUCTOS
@@ -63,6 +69,12 @@ class ProductoCreateView(CreateView):
 class ProductoDeleteView(DeleteView):
     model = Producto
     template_name = 'producto_eliminar.html'
+    success_url = reverse_lazy('producto_listado')
+    
+class ProductoUpdateView(UpdateView):
+    model = Producto
+    form_class = ProductoForm
+    template_name = 'producto_editar.html'
     success_url = reverse_lazy('producto_listado')
 
 #PEDIDOS
@@ -107,4 +119,21 @@ class ComponenteDetailView(DetailView):
     model = Componente
     template_name = 'componente_detalle.html'
     context_object_name = 'componente'
+
+class ComponenteCreateView(CreateView):
+    model = Componente
+    form_class = ComponenteForm
+    template_name = 'componente_form.html'
+    success_url = reverse_lazy('componente_listado')
+    
+class ComponenteDeleteView(DeleteView):
+    model = Componente
+    template_name = 'componente_eliminar.html'
+    success_url = reverse_lazy('componente_listado')
+    
+class ComponenteUpdateView(UpdateView):
+    model = Componente
+    form_class = ComponenteForm
+    template_name = 'componente_editar.html'
+    success_url = reverse_lazy('componente_listado')
 

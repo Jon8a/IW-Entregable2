@@ -4,6 +4,7 @@
 
 {% block content %}
 <h2>Listado de Componentes</h2>
+<a href="{% url 'componente_crear' %}" class="button">Crear Nuevo Componente</a>
 
 <table>
     <thead>
@@ -11,7 +12,7 @@
             <th>Nombre del Modelo</th>
             <th>Código de Referencia</th>
             <th>Proveedor</th>
-        
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +21,10 @@
             <td><a href="{% url 'componente_detalle' componente.id %}" class = 'detalle_link'>{{ componente.nombre_modelo }}</a></td>
             <td>{{ componente.codigo_referencia }}</td>
             <td>{{ componente.proveedor }}</td>
-            
+            <td>
+                <a href="{% url 'componente_editar' componente.id %}" class="button">Editar</a>
+                <!-- Botón de Eliminar -->
+                <a href="{% url 'componente_eliminar' componente.id %}" class="btn-eliminar">Eliminar</a>
              
             </td>
         </tr>

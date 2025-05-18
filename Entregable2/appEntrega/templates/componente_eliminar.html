@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Eliminar Cliente{% endblock %}
+
+{% block content %}
+<h2>¿Estás seguro de que deseas eliminar este componente?</h2>
+<p><strong>{{ object.codigo_referencia }}</strong></p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class = 'btn-eliminar'>Eliminar</button>
+    <a href="{% url 'componente_listado' %}" class="button">Cancelar</a>
+</form>
+
+{% endblock %}
