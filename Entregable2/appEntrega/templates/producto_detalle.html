@@ -3,8 +3,15 @@
 {% block title %}Detalle del Producto{% endblock %}
 
 {% block content %}
-<h2>Detalle del Producto: {{producto.nombre}}</h2>
+<<div style="display: flex; align-items: center; justify-content: space-between;">
+    <h2>Detalle del Producto</h2>
+    <div>
+        <a href="{% url 'producto_editar' producto.id %}" class="button">Editar</a>
+        <a href="{% url 'producto_eliminar' producto.id %}" class="btn-eliminar">Eliminar</a>
+    </div>
+</div>
 <p><strong>Referencia:</strong> {{ producto.referencia }}</p>
+<p><strong>Nombre:</strong> {{ producto.nombre }}</p>
 <p><strong>Precio:</strong> {{ producto.precio }}</p>
 <p><strong>Descripcion:</strong> {{ producto.descripcion }}</p>
 <p><strong>Categoria:</strong> {{producto.categoria }}</p>

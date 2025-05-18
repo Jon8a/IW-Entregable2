@@ -3,7 +3,13 @@
 {% block title %}Detalle del Cliente{% endblock %}
 
 {% block content %}
-<h2>Detalle del Cliente</h2>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <h2>Detalle del Cliente</h2>
+    <div>
+        <a href="{% url 'cliente_editar' cliente.id %}" class="button">Editar</a>
+        <a href="{% url 'cliente_eliminar' cliente.id %}" class="btn-eliminar">Eliminar</a>
+    </div>
+</div>
 <p><strong>CIF:</strong> {{ cliente.cif }}</p>
 <p><strong>Nombre de Empresa:</strong> {{ cliente.nombre_empresa }}</p>
 <p><strong>Dirección:</strong> {{ cliente.direccion }}</p>

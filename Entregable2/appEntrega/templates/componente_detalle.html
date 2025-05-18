@@ -3,7 +3,13 @@
 {% block title %}Detalle del Componente{% endblock %}
 
 {% block content %}
-<h2>Detalle del Componente</h2>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <h2>Detalle del Componente</h2>
+    <div>
+        <a href="{% url 'componente_editar' componente.id %}" class="button">Editar</a>
+        <a href="{% url 'componente_eliminar' componente.id %}" class="btn-eliminar">Eliminar</a>
+    </div>
+</div>
 <p><strong>Codigo de referencia:</strong> {{ componente.codigo_referencia }}</p>
 <p><strong>Nombre del modelo:</strong> {{ componente.nombre_modelo }}</p>
 <p><strong>Tipo de componente:</strong> {{ componente.tipo_componente }}</p>
