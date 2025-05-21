@@ -5,6 +5,11 @@ from django.views.generic import ListView, DetailView, CreateView, DeleteView,Up
 from .models import Cliente, Componente, Producto, Pedido
 from .forms import ClienteForm,ProductoForm,PedidoForm,ComponenteForm
 
+from django.contrib import messages
+from django.core.mail import send_mail
+from Entregable2.settings import DEFAULT_FROM_EMAIL
+
+
 
 
 #Ventana principal CAMBIAR A CLASE??
@@ -105,8 +110,31 @@ class PedidoUpdateView(UpdateView):
     form_class = PedidoForm
     template_name = 'pedido_editar.html'
     success_url = reverse_lazy('pedido_listado')
+    
+    # Ejecuta si se edita con éxito, si se ha cambiado el estado del pedido saltará una notificación y enviará un email al cliente
+    def form_valid(self, form):
+        pedido = form.save(commit=False)
+        pedido_anterior = Pedido.objects.get(pk=pedido.pk)
+        estado_anterior = pedido_anterior.estado
+        if form.cleaned_data['estado'] != estado_anterior:
+            # Salta popup de aviso
+            messages.success(
+                self.request,
+                f"El estado del pedido ha cambiado de {pedido_anterior.get_estado_display()} a {pedido.get_estado_display()}. Se enviará un email a la empresa."
+            )
+            # Enviar email
+            cliente = pedido.cliente
+            if cliente.datos_contacto:
+                send_mail(
+                    subject=f'El estado de su pedido {pedido.codigo_referencia} ha cambiado',
+                    message=f'El estado del pedido {pedido.codigo_referencia} ha cambiado de {pedido_anterior.get_estado_display()} a {pedido.get_estado_display()}.',
+                    from_email=DEFAULT_FROM_EMAIL,
+                    recipient_list=[cliente.datos_contacto],
+                    fail_silently=False,
+                )
+        return super().form_valid(form)
 
-#COMPONENTES - De momento solo hay listado y detalle ya que no era un requisito, hacer mas tarde creacion y eliminacion??
+#COMPONENTES 
 
 # Vista de listado de componentes
 class ComponenteListView(ListView):

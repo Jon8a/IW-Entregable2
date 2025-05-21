@@ -32,13 +32,23 @@
     <!-- Contenido a rellenar en cada pestaña -->
     <main>
         {% block content %}
+        
+            {% if messages %}
+
+            <!-- Cambiar a archivo JS cuando empecemos, de momento de debug -->
+            <script>
+                {% for message in messages %}
+                alert("{{ message|escapejs }}");
+                {% endfor %}
+            </script>
+            {% endif %}
         {% endblock %}
     </main>
 
     <!-- FOOTER COMÚN -->
     <hr>
     <footer>
-    <p>&copy; 2025 . Todos los derechos reservados.         Contacto: <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">deustroniccomponents@gmail.com</a></p> 
+    <p>&copy; 2025 . Todos los derechos reservados.         Contacto: <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">deustroniccompsl@gmail.com</a></p> 
     </footer>
 </body>
 </html>
