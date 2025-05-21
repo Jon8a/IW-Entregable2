@@ -1,0 +1,13 @@
+{% extends "base.html" %} 
+
+{% block title %}Crear Componente{% endblock %}
+
+{%block content %}
+<h2>Crear Componente</h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Guardar</button>
+  <a href="{% url 'componente_listado' %}" class="button">Cancelar</a>
+</form>
+
+{% endblock %}
