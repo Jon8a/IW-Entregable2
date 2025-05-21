@@ -16,6 +16,15 @@
 <p><strong>Proveedor:</strong> {{ componente.proveedor }}</p>
 <p><strong>Especificaciones:</strong> {{ componente.especificaciones_tecnicas }}</p>
 
+{% if componente.archivo %}
+<p>
+  <strong>Archivo adjunto:</strong>
+  <a href="{{ componente.archivo.url }}" download>
+    Descargar {{ componente.archivo.name}}
+  </a>
+</p>
+{% endif %}
+
 <h3>Productos que contienen este componente:</h3>
 <ul>
     {% for producto in componente.productos.all %}

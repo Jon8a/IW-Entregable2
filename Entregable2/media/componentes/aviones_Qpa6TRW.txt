@@ -1,0 +1,186 @@
+db.aviones.insertMany([
+  {
+    _id: 1,
+    modelo: "Boeing 747",
+    capacidad: "400",
+    aerolinea: "Aerolinea A",
+    fecha_fabricacion: "2019",
+    velocidad_maxima: "900"
+    }
+  ,
+  {
+    _id: 2,
+    modelo: "Airbus A380",
+    capacidad: "500",
+    aerolinea: "Aerolinea B",
+    fecha_fabricacion: "2022",
+    velocidad_maxima: "820"
+    }
+  ,
+  {
+    _id: 3,
+    modelo: "Embraer E145",
+    capacidad: "50",
+    aerolinea: "Aerolinea C",
+    fecha_fabricacion: "2020",
+    velocidad_maxima: "912"
+    }
+  ,
+  {
+    _id: 4,
+    modelo: "Boeing 777",
+    capacidad: "350",
+    aerolinea: "Aerolinea A",
+    fecha_fabricacion: "2021",
+    velocidad_maxima: "820"
+    }
+  ,
+  {
+    _id: 5,
+    modelo: "Airbus A330",
+    capacidad: "300",
+    aerolinea: "Aerolinea B",
+    fecha_fabricacion: "2020",
+    velocidad_maxima: "790"
+    }
+  ,
+  {
+    _id: 6,
+    modelo: "Embraer E190",
+    capacidad: "100",
+    aerolinea: "Aerolinea C",
+   fecha_fabricacion: "2010",
+   velocidad_maxima: "840"
+    }
+  ,
+  {
+    _id: 7,
+    modelo: "Boeing 737",
+    capacidad: "200",
+    aerolinea: "Aerolinea A",
+    fecha_fabricacion: "2021",
+    velocidad_maxima: "940"
+    }
+  ,
+  {
+    _id: 8,
+    modelo: "Airbus A320",
+    capacidad: 180,
+    aerolinea: "Aerolinea B",
+    fecha_fabricacion: 2020,
+    velocidad_maxima: "1100"
+    }
+  ,
+  {
+    _id: 9,
+    modelo: "Embraer E175",
+    capacidad: "80",
+    aerolinea: "Aerolinea C",
+    fecha_fabricacion: "2012",
+    velocidad_maxima: "990"
+    }
+  ,
+  {
+    _id: 10,
+    modelo: "Boeing 787",
+    capacidad: "300",
+    aerolinea: "Aerolinea A",
+    fecha_fabricacion: "2022",
+    velocidad_maxima: "720"
+    }
+])
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+db.aviones.updateOne(
+  { modelo: "Boeing 747" },
+  {
+    $set: {
+      caracteristicas: { color: "rojo", autonomia: "10,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Airbus A380" },
+  {
+    $set: {
+      caracteristicas: { color: "azul", autonomia: "12,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Boeing 787" },
+  {
+    $set: {
+      caracteristicas: { color: "rojo", autonomia: "8,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Airbus A320" },
+  {
+    $set: {
+      caracteristicas: { color: "naranja", autonomia: "4,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Boeing 737" },
+  {
+    $set: {
+      caracteristicas: { color: "azul", autonomia: "5,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Embraer E190" },
+  {
+    $set: {
+      caracteristicas: { color: "negro", autonomia: "3,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Airbus A330" },
+  {
+    $set: {
+      caracteristicas: { color: "rojo", autonomia: "9,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Boeing 777" },
+  {
+    $set: {
+      caracteristicas: { color: "blanco", autonomia: "11,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Airbus A350" },
+  {
+    $set: {
+      caracteristicas: { color: "azul", autonomia: "10,000 km" }
+    }
+  }
+);
+
+db.aviones.updateOne(
+  { modelo: "Boeing 737 MAX" },
+  {
+    $set: {
+      caracteristicas: { color: "rojo", autonomia: "4,500 km" }
+    }
+  }
+);	

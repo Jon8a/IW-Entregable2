@@ -111,19 +111,23 @@ class PedidoUpdateView(UpdateView):
     template_name = 'pedido_editar.html'
     success_url = reverse_lazy('pedido_listado')
     
-    #Ejecuta si se edita con exito, si se ha cambiado el estado del pedido saltara una notificacion y enviara un email al cliente
+    # Ejecuta si se edita con éxito, si se ha cambiado el estado del pedido saltará una notificación y enviará un email al cliente
     def form_valid(self, form):
         pedido = form.save(commit=False)
-        estado_anterior = Pedido.objects.get(pk=pedido.pk).estado
+        pedido_anterior = Pedido.objects.get(pk=pedido.pk)
+        estado_anterior = pedido_anterior.estado
         if form.cleaned_data['estado'] != estado_anterior:
             # Salta popup de aviso
-            messages.success(self.request, f"El estado del pedido ha cambiado de {estado_anterior} a {form.cleaned_data['estado']}. Se enviará un email a la empresa.")
+            messages.success(
+                self.request,
+                f"El estado del pedido ha cambiado de {pedido_anterior.get_estado_display()} a {pedido.get_estado_display()}. Se enviará un email a la empresa."
+            )
             # Enviar email
             cliente = pedido.cliente
             if cliente.datos_contacto:
                 send_mail(
                     subject=f'El estado de su pedido {pedido.codigo_referencia} ha cambiado',
-                    message=f'El estado del pedido {pedido.codigo_referencia} ha cambiado de {estado_anterior.get_estado_display()} a {pedido.get_estado_display()}.',
+                    message=f'El estado del pedido {pedido.codigo_referencia} ha cambiado de {pedido_anterior.get_estado_display()} a {pedido.get_estado_display()}.',
                     from_email=DEFAULT_FROM_EMAIL,
                     recipient_list=[cliente.datos_contacto],
                     fail_silently=False,

@@ -1,7 +1,5 @@
 from django.db import models
 
-from django.db import models
-
 """SI CREAIS NUEVOS MODELOS AÑADIRLOS A LA PAGINA DE ADMINISTRADOR PARA CREAR REGISTROS MAS FACIL"""
 
 """Es el extra, valorar si merece la pena hacerlo"""
@@ -21,6 +19,7 @@ class Componente(models.Model):
     tipo_componente = models.CharField(max_length=100)
     proveedor = models.CharField(max_length=100)
     especificaciones_tecnicas = models.TextField()
+    archivo = models.FileField(upload_to='componentes/', null=True, blank=True)
 
     def __str__(self):
         return self.nombre_modelo

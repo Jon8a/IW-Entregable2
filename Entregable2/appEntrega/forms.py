@@ -25,4 +25,4 @@ class PedidoForm(forms.ModelForm):
 class ComponenteForm(forms.ModelForm):
     class Meta:
         model = Componente
-        fields = ['codigo_referencia','nombre_modelo','tipo_componente','proveedor','especificaciones_tecnicas']
+        fields = ['codigo_referencia','nombre_modelo','tipo_componente','proveedor','especificaciones_tecnicas','archivo']

@@ -125,6 +125,13 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+#Con esto sabe donde guardar los archivos 
+MEDIA_URL = '/media/'
+#Con esto accede a la carpeta
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+
 #Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
