@@ -123,7 +123,7 @@ class PedidoUpdateView(UpdateView):
             if cliente.datos_contacto:
                 send_mail(
                     subject=f'El estado de su pedido {pedido.codigo_referencia} ha cambiado',
-                    message=f'El estado del pedido ha cambiado de {pedido.get_estado_display()} a {form.cleaned_data["estado"]}.',
+                    message=f'El estado del pedido {pedido.codigo_referencia} ha cambiado de {estado_anterior.get_estado_display()} a {pedido.get_estado_display()}.',
                     from_email=DEFAULT_FROM_EMAIL,
                     recipient_list=[cliente.datos_contacto],
                     fail_silently=False,
