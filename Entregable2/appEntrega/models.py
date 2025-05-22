@@ -18,6 +18,7 @@ class Componente(models.Model):
     nombre_modelo = models.CharField(max_length=100)
     tipo_componente = models.CharField(max_length=100)
     proveedor = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
     especificaciones_tecnicas = models.TextField()
     archivo = models.FileField(upload_to='componentes/', null=True, blank=True)
 
@@ -27,7 +28,6 @@ class Componente(models.Model):
 
 class Producto(models.Model):
     referencia = models.CharField(max_length=50, unique=True)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
     categoria = models.CharField(max_length=100)

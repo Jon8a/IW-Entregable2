@@ -12,6 +12,7 @@
             <th>Nombre del Modelo</th>
             <th>Código de Referencia</th>
             <th>Proveedor</th>
+            <th>Precio</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -21,6 +22,7 @@
             <td><a href="{% url 'componente_detalle' componente.id %}" class = 'detalle_link'>{{ componente.nombre_modelo }}</a></td>
             <td>{{ componente.codigo_referencia }}</td>
             <td>{{ componente.proveedor }}</td>
+            <td>{{ componente.precio }}</td>
             <td>
                 <a href="{% url 'componente_editar' componente.id %}" class="button">Editar</a>
                 <!-- Botón de Eliminar -->

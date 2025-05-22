@@ -9,7 +9,7 @@ class ClienteForm(forms.ModelForm):
 class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ['referencia','precio' ,'nombre','descripcion' ,'categoria' , 'componentes' ]
+        fields = ['referencia','nombre','descripcion' ,'categoria' , 'componentes' ]
         
 class PedidoForm(forms.ModelForm):
      class Meta:
@@ -25,4 +25,4 @@ class PedidoForm(forms.ModelForm):
 class ComponenteForm(forms.ModelForm):
     class Meta:
         model = Componente
-        fields = ['codigo_referencia','nombre_modelo','tipo_componente','proveedor','especificaciones_tecnicas','archivo']
+        fields = ['codigo_referencia','nombre_modelo','tipo_componente','proveedor','precio','especificaciones_tecnicas','archivo']
