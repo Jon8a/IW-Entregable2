@@ -1,13 +1,18 @@
 {% extends "base.html" %} 
+{% load static %}
+
 
 {% block title %}Editar Componente{% endblock %}
 
 {%block content %}
 <h2>Estas editando el componente:</h2>
 <p><strong>{{ object.codigo_referencia}}</strong></p>
-<form method="post" enctype="multipart/form-data">
+<form id="componenteForm" method="post" enctype="multipart/form-data">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit">Actualizar</button>
   <a href="{% url 'componente_listado' %}" class="button">Cancelar</a>
 </form>
+
+<script src="{% static 'JS/validaciones.js' %}"></script>
 {% endblock %}
+
