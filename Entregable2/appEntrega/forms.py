@@ -9,7 +9,10 @@ class ClienteForm(forms.ModelForm):
 class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ['referencia','nombre','descripcion' ,'categoria' , 'componentes' ]
+        fields = ['referencia','nombre','descripcion' ,'categoria' , 'componentes', 'precio' ]
+        widgets = {
+            'precio': forms.NumberInput(attrs={'readonly': 'readonly'})
+        }
         
 class PedidoForm(forms.ModelForm):
      class Meta:

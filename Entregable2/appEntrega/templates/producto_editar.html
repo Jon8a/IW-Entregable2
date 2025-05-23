@@ -11,5 +11,16 @@
     <button type="submit">Actualizar</button>
     <a href="{% url 'producto_listado' %}" class="button">Cancelar</a>
 </form>
+<script>
+document.getElementById("id_componentes").addEventListener("change", function() {
+  const ids = Array.from(this.selectedOptions).map(opt => opt.value);
+  fetch('/api/calcular-precio/?ids[]=' + ids.join('&ids[]='))
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("id_precio").value = data.total.toFixed(2);
+    })
+    .catch(err => console.error('Error:', err));
+});
+</script>
 
 {% endblock %}

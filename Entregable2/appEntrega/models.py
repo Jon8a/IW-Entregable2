@@ -32,9 +32,14 @@ class Producto(models.Model):
     descripcion = models.TextField()
     categoria = models.CharField(max_length=100)
     componentes = models.ManyToManyField(Componente, related_name='productos')
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return self.nombre
+    
+    def calcular_precio(self):
+        return sum(componente.precio for componente in self.componentes.all())
+
 
 
 class Pedido(models.Model):
