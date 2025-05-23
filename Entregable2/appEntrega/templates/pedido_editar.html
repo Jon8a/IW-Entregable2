@@ -1,15 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block title %}Editar Pedido{% endblock %}
 
 {% block content %}
 <h2>Estas editando el pedido:</h2>
 <p><strong>{{ object.nombre_referencia}}</strong></p>
-<form method="post">
+<form id="pedidoForm" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Actualizar</button>
     <a href="{% url 'pedido_listado' %}" class="button">Cancelar</a>
 </form>
 
+<script src="{% static 'JS/validaciones.js' %}"></script>
 {% endblock %}

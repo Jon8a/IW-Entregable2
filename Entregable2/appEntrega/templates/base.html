@@ -33,15 +33,7 @@
     <main>
         {% block content %}
         
-            {% if messages %}
-
-            <!-- Cambiar a archivo JS cuando empecemos, de momento de debug -->
-            <script>
-                {% for message in messages %}
-                alert("{{ message|escapejs }}");
-                {% endfor %}
-            </script>
-            {% endif %}
+          
         {% endblock %}
     </main>
 
