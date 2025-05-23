@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block title %}Crear Producto{% endblock %}
 
 {% block content %}
 <h2>Crear Producto</h2>
-<form method="post">
+<form id="productoForm" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Guardar</button>
@@ -23,4 +25,5 @@ document.getElementById("id_componentes").addEventListener("change", function() 
 </script>
 
 
+<script src="{% static 'JS/validaciones.js' %}"></script>
 {% endblock %}
