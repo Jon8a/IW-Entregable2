@@ -10,6 +10,7 @@
         <tr>
             <th>Nombre</th>
             <th>Referencia</th>
+            <th>Precio</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -18,6 +19,7 @@
         <tr>
             <td><a href="{% url 'producto_detalle' producto.id %}" class="detalle_link">{{ producto.nombre }}</a></td>
             <td>{{ producto.referencia }}</td>
+            <td>{{ producto.precio }}</td>
             <td>
                 <a href="{% url 'producto_editar' producto.id %}" class="button">Editar</a>
                 <!-- Botón de Eliminar con la clase btn-eliminar -->

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView,UpdateView
 from .models import Cliente, Componente, Producto, Pedido
@@ -71,6 +71,12 @@ class ProductoCreateView(CreateView):
     template_name = 'producto_form.html'
     success_url = reverse_lazy('producto_listado')
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        self.object.precio = self.object.calcular_precio()
+        self.object.save()
+        return response
+
 class ProductoDeleteView(DeleteView):
     model = Producto
     template_name = 'producto_eliminar.html'
@@ -81,6 +87,20 @@ class ProductoUpdateView(UpdateView):
     form_class = ProductoForm
     template_name = 'producto_editar.html'
     success_url = reverse_lazy('producto_listado')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        self.object.precio = self.object.calcular_precio()
+        self.object.save()
+        return response
+
+
+# Función para calcular el precio de los componentes seleccionados
+def calcular_precio_componentes(request):
+    ids = request.GET.getlist('ids[]')
+    componentes = Componente.objects.filter(id__in=ids)
+    total = sum(c.precio for c in componentes)
+    return JsonResponse({'total': float(total)})
 
 #PEDIDOS
 

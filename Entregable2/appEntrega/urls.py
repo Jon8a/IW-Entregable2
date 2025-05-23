@@ -36,5 +36,7 @@ path('componente/<int:pk>/', ComponenteDetailView.as_view(),name='componente_det
 path('componente/nuevo/', ComponenteCreateView.as_view(), name='componente_crear'),
 path('componente/<int:pk>/eliminar/', ComponenteDeleteView.as_view(), name='componente_eliminar'),
 path('componente/<int:pk>/editar/', ComponenteUpdateView.as_view(), name='componente_editar'),
- 
+
+path('api/calcular-precio/', views.calcular_precio_componentes, name='calcular_precio_componentes'),
+
 ]
