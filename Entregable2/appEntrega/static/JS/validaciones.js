@@ -55,5 +55,12 @@ if (pedidoForm) {
     });
 }
 
-
+// Convertir a mayúsculas los campos de texto con la clase "mayusculas", en este caso se aplica a los campos de código de referencia
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".mayusculas").forEach(function(input) {
+    input.addEventListener("input", function() {
+      this.value = this.value.toUpperCase();
+    });
+  });
+});
 
