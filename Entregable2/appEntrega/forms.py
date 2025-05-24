@@ -20,6 +20,7 @@ class PedidoForm(forms.ModelForm):
         fields = ['codigo_referencia','fecha_entrega_estimada',
                   'fecha_entrega','cliente','productos','estado','urgencia','detalles' ]
         widgets = {
+            'codigo_referencia': forms.TextInput(attrs={'class': 'mayusculas'}),
             'fecha_entrega_estimada': forms.DateInput(attrs={'type': 'date'}),
             'fecha_entrega': forms.DateInput(attrs={'type': 'date'}),
 
