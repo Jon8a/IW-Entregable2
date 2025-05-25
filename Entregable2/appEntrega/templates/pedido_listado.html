@@ -34,4 +34,25 @@
         {% endfor %}
     </tbody>
 </table>
+
+{% if is_paginated %}
+  <div class="paginacion">
+   
+    <!-- Si hay una página anterior, se muestran los botones para ir a la primera y a la anterior -->
+    {% if page_obj.has_previous %}
+      <a href="?page=1">Primera</a>
+      <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+    {% endif %}
+
+    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }} 
+
+    <!-- Si hay una página siguiente, se muestran los botones para ir a la ultima y a la siguiente -->
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+      <a href="?page={{ page_obj.paginator.num_pages }}">Última</a>
+    {% endif %}
+    
+  </div>
+{% endif %}
+
 {% endblock %}
