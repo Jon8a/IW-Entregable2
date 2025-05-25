@@ -26,6 +26,8 @@ class ClienteListView(ListView):
     model = Cliente
     template_name = 'cliente_listado.html'
     context_object_name = 'clientes'
+    paginate_by = 10
+
 
 # Vista de detalle de cliente
 class ClienteDetailView(DetailView):
@@ -59,6 +61,8 @@ class ProductoListView(ListView):
     model = Producto
     template_name = 'producto_listado.html'
     context_object_name = 'productos'
+    paginate_by = 10
+
 
 class ProductoDetailView(DetailView):
     model = Producto
@@ -108,6 +112,7 @@ class PedidoListView(ListView):
     model = Pedido
     template_name = 'pedido_listado.html'
     context_object_name = 'pedidos'
+    paginate_by = 10
     
 class PedidoDetailView(DetailView):
     model = Pedido
@@ -161,6 +166,7 @@ class ComponenteListView(ListView):
     model = Componente
     template_name = 'componente_listado.html'
     context_object_name = 'componentes'
+    paginate_by = 10
 
 # Vista de detalle de cliente
 class ComponenteDetailView(DetailView):
