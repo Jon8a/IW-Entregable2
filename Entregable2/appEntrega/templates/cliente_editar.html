@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Editar Cliente{% endblock %}
 
@@ -12,4 +13,5 @@
     <a href="{% url 'cliente_listado' %}" class="button">Cancelar</a>
 </form>
 
+<script src="{% static 'JS/validaciones.js' %}"></script>
 {% endblock %}
