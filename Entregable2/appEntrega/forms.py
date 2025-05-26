@@ -5,12 +5,16 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = ['cif', 'nombre_empresa', 'direccion', 'datos_contacto']
+        widgets = {
+            'cif': forms.TextInput(attrs={'class': 'mayusculas'})
+        }
 
 class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
         fields = ['referencia','nombre','descripcion' ,'categoria' , 'componentes', 'precio' ]
         widgets = {
+            'referencia': forms.TextInput(attrs={'class': 'mayusculas'}),
             'precio': forms.NumberInput(attrs={'readonly': 'readonly'})
         }
         
@@ -22,8 +26,7 @@ class PedidoForm(forms.ModelForm):
         widgets = {
             'codigo_referencia': forms.TextInput(attrs={'class': 'mayusculas'}),
             'fecha_entrega_estimada': forms.DateInput(attrs={'type': 'date'}),
-            'fecha_entrega': forms.DateInput(attrs={'type': 'date'}),
-
+            'fecha_entrega': forms.DateInput(attrs={'type': 'date'})
         }
 
 class ComponenteForm(forms.ModelForm):
