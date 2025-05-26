@@ -34,3 +34,6 @@ class ComponenteForm(forms.ModelForm):
     class Meta:
         model = Componente
         fields = ['codigo_referencia','nombre_modelo','tipo_componente','proveedor','precio','especificaciones_tecnicas','archivo']
+        widgets = {
+            'codigo_referencia': forms.TextInput(attrs={'class': 'mayusculas'})
+        }
