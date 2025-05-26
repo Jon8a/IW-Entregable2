@@ -37,3 +37,4 @@ class ComponenteForm(forms.ModelForm):
         widgets = {
             'codigo_referencia': forms.TextInput(attrs={'class': 'mayusculas'})
         }
+
