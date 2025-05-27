@@ -77,11 +77,64 @@ Y finalmente acceder a la aplicacion mediante el navegador en esta url:
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Siguiente entrega:
+Entrega E3,E4:
 
-Tal vez añadir una barra de busqueda y poder ordenar las listas??
-Un modo oscuro?
-Al crear productos o componentes nuevos poder añadir archivos como fotos o modelos 3D?
-Actualmente al crear un nuevo pedido o producto al añadir los productos y componentes hay que hacerlo con control click para seleccionar mas de uno, buscar una forma mas intuitiva y visual de hacerlo
-Si es necesario añadir todas las acciones a los demas modelos tambien editar eliminar...
-Hacer categoria como un nuevo modelo en vez de atributo para poder navegar por las relaciones tambien o sino poder añadirlo como filtro en busqueda?
+Ampliación de funcionalidades en Python:
+
+    (2 puntos) Envío de emails desde la aplicación:
+
+        Se ha programado de tal forma que cuando se actualice un pedido se enviara un email a el email que contiene el campo de datos de contacto del cliente vinculado a dicho pedido, actualizandole de el nuevo estado del pedido
+        Para probarlo crear un cliente con el email a usar y crear o asignarle un pedido, luego editar el estado de dicho pedido lo que deberia mandarle un email
+
+    (2 puntos) Subida de ficheros al servidor mediante <input type="file"> y
+    mostrarlos en una página (tienen que poder descargarse)
+
+        Se ha programado de tal forma que podra añadirse un archivo en los componentes (pensado para planos, modelo3D...) en caso de querer añadir mas de un archivo debera añadirse un zip que contenga todo
+
+    (1 punto) Paginación en tablas/listados de los resultados de una tabla.
+
+        Se ha programado de forma que si el listado contiene mas de 10 registros se paginaran dando la opcion de navegar a la pagina siguiente o la ultima en caso de existir paginas siguientes y de ir a la anteriror o la primera en caso de haber anteriores
+
+
+Implementar las siguientes funcionalidades JavaScript:
+
+    (1p) Crear un evento al hacer click en un botón o enlace que produzca el
+    cambio (aumentar/disminuir) del tamaño de todos los elementos de texto
+    (<h1>, <h2>, <p>, ...).
+
+        Se ha hecho de forma que habra un slider en el footer que permita manipular en tiempo real el tamaño de todos los elementos de texto, visualizando el valor en pixeles en todo momento
+    
+    (1p) Validar campos de un formulario antes de su envío al servidor,
+    impidiendo el envío si no se supera la validación
+
+        Programado para no permitir el envio del formulario en caso de no cumplir con unos prefijos preestablecidos para los codigos de referencia de todos lo modelos (por cuestion de navegabilidad y orden) ademas de no permitir que un componente tenga precio negativo
+
+    (1p) Autocalcular un campo de un formulario
+
+        Programado para convertir los caracteres contenidos en el formulario de codigo de referencia de todos los modelos a mayusculas (Esta programado al final de el archivo validaciones.js)
+
+    (1p) Capturar un evento en el DOM y producir un cambio en el
+    estilo/contenido de la página (p. ej: mostrar/ocultar un bloque al hacer click
+    en “expandir información”, mostrar una alerta si el usuario realiza una acción
+    determinada,...)
+
+        Saltara una alerta si un usuario edita el estado actual de la entrega de un pedido alertando de que se enviara un email a la empresa designada con los cambios realizados
+        Ademas tambien habra una alerta en caso de que no se cumplan las validaciones anteriormente descritas alertando el motivo
+
+Funcionalidades JavaScript para cargar y/o almacenar datos utilizando Fetch:
+
+    (2p) Cargar datos y modificar el DOM mediante JavaScript: llamada a API de
+    Django utilizando Fetch para obtener datos y mostrar los valores modificando
+    el DOM:
+
+        Funcionalidad programada de forma que, al seleccionar componentes en el formulario de producto, se haga automáticamente una llamada a una API de Django usando Fetch. El JavaScript recoge los IDs de los componentes seleccionados, consulta el precio total al backend y, cuando recibe la respuesta, actualiza el campo de precio en el formulario sin recargar la página. Así, el usuario ve el precio actualizado en tiempo real según los componentes elegidos
+
+            Los archivos que contien esta funcionalidad son:
+
+                producto_form.html
+                producto_editar.html
+                views.py
+                urls.py
+                models.py
+
+
